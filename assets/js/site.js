@@ -31,27 +31,12 @@
 
   /* ---------- Pontilhado (meio-tom em ondas) ---------- */
   function pontilhado(classe) {
-    var ns = 'http://www.w3.org/2000/svg';
-    var svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('class', 'dots ' + classe);
-    svg.setAttribute('viewBox', '0 0 230 210');
-    svg.setAttribute('aria-hidden', 'true');
-    /* linhas de pontos em onda, que somem em direção ao centro do slide */
-    for (var row = 0; row < 24; row++) {
-      for (var col = 0; col < 28; col++) {
-        var x = 230 - col * 9;
-        var y = row * 9.5 + Math.sin(col / 3.4 + row / 6) * 9 + col * 2.2;
-        var d = Math.sqrt(Math.pow((230 - x) / 235, 2) + Math.pow(y / 215, 2));
-        var r = 2.3 * (1 - d);
-        if (r < 0.45 || y > 210 || y < 0) continue;
-        var c = document.createElementNS(ns, 'circle');
-        c.setAttribute('cx', x.toFixed(1));
-        c.setAttribute('cy', y.toFixed(1));
-        c.setAttribute('r', r.toFixed(2));
-        svg.appendChild(c);
-      }
-    }
-    return svg;
+    var img = document.createElement('img');
+    img.className = 'dots ' + classe;
+    img.src = raiz + 'assets/img/pontos.webp';
+    img.alt = '';
+    img.setAttribute('aria-hidden', 'true');
+    return img;
   }
 
   function logo() {
