@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     /* ---------- Capa (página 1) ---------- */
-    .capa .logo-unip { top: 70px; left: 40px; width: 218px; opacity: 1; }
-    .capa .logo-unip .unip { font-size: 60px; }
-    .capa .logo-unip .faixa { font-size: 17px; }
+    .capa .logo-unip { top: 77px; left: 39px; width: 219px; opacity: 1; }
 
     .capa .divisor { position: absolute; left: 278px; top: 48px; width: 2px; height: 118px; background: #555a6e; }
     .capa .instituicao {
@@ -38,30 +36,8 @@
     .capa .autora .orient { font-weight: 700; font-size: 21px; margin-top: 18px; }
     .capa .autora .local { font-weight: 400; font-size: 27px; margin-top: 18px; }
 
-    .capa .faixa-escura {
-      position: absolute; inset: 0;
-      background: linear-gradient(160deg, #1d3a73, #10204a);
-      clip-path: polygon(1030px 0, 1188px 0, 1076px 180px, 918px 180px);
-    }
-    .capa .faixa-branca {
-      position: absolute; inset: 0; background: #fff;
-      clip-path: polygon(1188px 0, 1212px 0, 762px 720px, 738px 720px);
-    }
-    .capa .foto {
-      position: absolute; inset: 0;
-      clip-path: polygon(1212px 0, 1280px 0, 1280px 720px, 762px 720px);
-    }
-    .capa .foto svg { position: absolute; inset: 0; width: 1280px; height: 720px; }
-    .capa .faixa-baixo {
-      position: absolute; inset: 0;
-      background: linear-gradient(200deg, #14306a, #0d1d45);
-      clip-path: polygon(1000px 552px, 1095px 552px, 990px 720px, 895px 720px);
-    }
-    .capa .faixa-clara {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, #a9bede, #e8eef7);
-      clip-path: polygon(888px 620px, 958px 620px, 895px 720px, 825px 720px);
-    }
+    /* Arte da direita (globo e faixas) exportada do Canva */
+    .capa .arte { position: absolute; left: 660px; top: 0; width: 620px; height: 720px; pointer-events: none; }
   </style>
 </head>
 <body data-pagina="1" data-raiz="">
@@ -71,8 +47,7 @@
     <section class="slide capa" data-sem-moldura aria-label="Página 1 — Capa">
 
       <div class="logo-unip" aria-label="UNIP — Universidade Paulista">
-        <div class="unip">UNIP</div>
-        <div class="faixa">UNIVERSIDADE PAULISTA</div>
+        <img src="assets/img/logo-unip.webp" alt="UNIP — Universidade Paulista">
       </div>
       <div class="divisor"></div>
       <div class="instituicao">
@@ -94,78 +69,12 @@
         <p class="local">São Paulo | 2026</p>
       </div>
 
-      <!-- Imagem diagonal: Terra à noite com rede de conexões -->
-      <div class="faixa-escura"></div>
-      <div class="faixa-branca"></div>
-      <div class="foto">
-        <svg id="terra" viewBox="0 0 1280 720" aria-hidden="true">
-          <defs>
-            <radialGradient id="ceu" cx="78%" cy="55%" r="60%">
-              <stop offset="0" stop-color="#1b4f9c"/>
-              <stop offset=".55" stop-color="#0c2a5e"/>
-              <stop offset="1" stop-color="#050f2a"/>
-            </radialGradient>
-            <radialGradient id="globo" cx="40%" cy="35%" r="70%">
-              <stop offset="0" stop-color="#2d6fc4"/>
-              <stop offset=".6" stop-color="#103a7a"/>
-              <stop offset="1" stop-color="#071a3d"/>
-            </radialGradient>
-            <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="2.2"/>
-            </filter>
-          </defs>
-          <rect width="1280" height="720" fill="url(#ceu)"/>
-          <circle cx="1060" cy="420" r="330" fill="url(#globo)"/>
-          <circle cx="1060" cy="420" r="332" fill="none" stroke="#6fb4ff" stroke-opacity=".35" stroke-width="3"/>
-          <g id="rede"></g>
-        </svg>
-      </div>
-      <div class="faixa-baixo"></div>
-      <div class="faixa-clara"></div>
+      <!-- Imagem diagonal: Terra à noite com rede de conexões (do Canva) -->
+      <img class="arte" src="assets/img/capa-arte.webp" alt="">
     </section>
   </div>
 </main>
 
-<script>
-  /* Rede de pontos luminosos sobre o globo (determinística) */
-  (function () {
-    var g = document.getElementById('rede');
-    var ns = 'http://www.w3.org/2000/svg';
-    var seed = 7;
-    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-    var pts = [];
-    while (pts.length < 140) {
-      var a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * 320;
-      var x = 1060 + Math.cos(a) * r, y = 420 + Math.sin(a) * r;
-      /* concentra pontos em "continentes" */
-      var cont = (x > 960 && x < 1130 && y > 330 && y < 640) || (x > 860 && x < 1080 && y > 200 && y < 330) || (x > 1130 && y > 180 && y < 420);
-      if (cont || rnd() < .25) pts.push([x, y]);
-    }
-    var linhas = '';
-    for (var i = 0; i < pts.length; i++) {
-      for (var j = i + 1; j < pts.length; j++) {
-        var dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
-        if (dx * dx + dy * dy < 75 * 75 && rnd() < .55)
-          linhas += 'M' + pts[i][0].toFixed(0) + ' ' + pts[i][1].toFixed(0) + 'L' + pts[j][0].toFixed(0) + ' ' + pts[j][1].toFixed(0);
-      }
-    }
-    var p = document.createElementNS(ns, 'path');
-    p.setAttribute('d', linhas);
-    p.setAttribute('stroke', '#8cc8ff'); p.setAttribute('stroke-opacity', '.35'); p.setAttribute('stroke-width', '1');
-    g.appendChild(p);
-    pts.forEach(function (q) {
-      var s = .8 + rnd() * 2.2;
-      var c = document.createElementNS(ns, 'circle');
-      c.setAttribute('cx', q[0]); c.setAttribute('cy', q[1]); c.setAttribute('r', s * 2.2);
-      c.setAttribute('fill', '#bfe3ff'); c.setAttribute('opacity', '.5'); c.setAttribute('filter', 'url(#brilho)');
-      g.appendChild(c);
-      var d = document.createElementNS(ns, 'circle');
-      d.setAttribute('cx', q[0]); d.setAttribute('cy', q[1]); d.setAttribute('r', s * .7);
-      d.setAttribute('fill', '#ffffff');
-      g.appendChild(d);
-    });
-  })();
-</script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
