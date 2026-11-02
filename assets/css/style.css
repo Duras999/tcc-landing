@@ -71,41 +71,15 @@ body {
 .dots.bl { bottom: 0; left: 0; width: 230px; height: 210px; transform: rotate(180deg); }
 .dots circle { fill: var(--dot); }
 
-/* ---------- Logo UNIP ---------- */
+/* ---------- Logo UNIP (imagem exportada do Canva) ---------- */
 .logo-unip {
   position: absolute;
-  top: 26px; left: 24px;
-  width: 200px;
+  top: 29px; left: 21px;
+  width: 219px;
   user-select: none;
 }
-.logo-unip .unip {
-  font-family: 'Roboto Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif;
-  font-weight: 800;
-  font-style: italic;
-  font-size: 54px;
-  line-height: .9;
-  letter-spacing: 2px;
-  color: var(--unip-yellow);
-  text-align: center;
-  padding-left: 22px;
-  -webkit-text-stroke: 1px #d8cc00;
-  transform: skewX(-8deg);
-}
-.logo-unip .faixa {
-  margin-top: 2px;
-  background: var(--unip-red);
-  color: #fff;
-  font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 15.5px;
-  white-space: nowrap;
-  letter-spacing: .2px;
-  text-align: center;
-  padding: 3px 0 2px;
-  clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
-}
-.logo-unip.suave { opacity: .72; }
+.logo-unip img { display: block; width: 100%; height: auto; }
+.logo-unip.suave { opacity: .55; }
 
 /* ---------- Títulos ---------- */
 .titulo {
