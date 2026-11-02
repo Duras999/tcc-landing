@@ -58,7 +58,7 @@
     var d = document.createElement('div');
     d.className = 'logo-unip' + (atual === 1 ? '' : ' suave');
     d.setAttribute('aria-label', 'UNIP — Universidade Paulista');
-    d.innerHTML = '<div class="unip">UNIP</div><div class="faixa">UNIVERSIDADE PAULISTA</div>';
+    d.innerHTML = '<img src="' + raiz + 'assets/img/logo-unip.webp" alt="UNIP — Universidade Paulista">';
     return d;
   }
 
