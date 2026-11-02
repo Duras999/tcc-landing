@@ -19,7 +19,8 @@
     { n: 10, arquivo: 'paginas/10-caso-worldcoin.html',            titulo: 'O caso Worldcoin' },
     { n: 11, arquivo: 'paginas/11-consideracoes-finais.html',      titulo: 'Considerações finais e conclusão' },
     { n: 12, arquivo: 'paginas/12-referencias.html',               titulo: 'Referências' },
-    { n: 13, arquivo: 'paginas/13-obrigada.html',                  titulo: 'Obrigada!' }
+    { n: 13, arquivo: 'paginas/13-obrigada.html',                  titulo: 'Obrigada!' },
+    { n: 14, arquivo: 'paginas/14-trabalho-completo.html',         titulo: 'Trabalho completo (PDF)' }
   ];
 
   var body = document.body;
