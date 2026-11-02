@@ -1,138 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apresentação do TCC</title>
-<meta name="description" content="Landing page de apresentação do Trabalho de Conclusão de Curso.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#14161C;--paper:#F3F3EF;--accent:#2A3FD9;--accent-l:#9DAAFF;--muted:#3F4350;--soft:#555A66;--line:#C9C9C2}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif}
-a{color:var(--ink)}a:hover{color:var(--accent)}
-h1,h2,h3,.d{font-family:'Space Grotesk',sans-serif}
-.m{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;color:var(--soft)}
-.w{max-width:1240px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:40px}
-.row{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
-h2{margin:0;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.02em;line-height:1.05}
-h3{margin:0;font-size:22px}
-p{margin:0;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px}
-.btn svg{width:18px;height:18px}
-.pri{background:var(--accent);color:#fff}.pri:hover{color:#fff;opacity:.9}
-.sec{border:1.5px solid var(--ink)}
-header{max-width:1240px;margin:0 auto;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
-.logo b{width:40px;height:40px;border-radius:10px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:16px}
-nav{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;font-weight:500}
-nav a{text-decoration:none;padding:10px 0}
-.hero{max-width:1240px;margin:0 auto;padding:64px 24px 96px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-end}
-.hero>div{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
-.pill{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:8px 14px;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink)}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-h1{margin:0;font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.03em}
-.lead{max-width:640px;font-size:1.25rem;color:var(--muted)}
-dl{flex:1 1 300px;margin:0;border-top:1.5px solid var(--ink)}
-dl div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
-dd{margin:0;font-weight:600;text-align:right}
-.dark{background:var(--ink);color:var(--paper)}
-.dark .m{color:#A9ADB8}
-.card{padding:32px;border-radius:16px;background:#1F222B;display:flex;flex-direction:column;gap:14px}
-.card .m{color:var(--accent-l)}
-.card p{color:#C9CCD4}
-ol{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
-li{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line)}
-li .n{flex:0 0 72px;font-weight:700;font-size:40px;color:var(--accent)}
-li .t{flex:1 1 240px;font-weight:700;font-size:24px}
-li p{flex:2 1 320px;color:var(--muted)}
-.alt{background:#E6E6DF}
-.stat{padding:32px;border-radius:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
-.stat .d{font-weight:700;font-size:56px;letter-spacing:-.03em;color:var(--accent)}
-.stat span{color:var(--muted);line-height:1.5}
-blockquote{margin:0;padding:40px;border-radius:16px;background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.35}
-.member{padding:28px;border:1.5px solid var(--ink);border-radius:16px;display:flex;gap:18px;align-items:center}
-.av{flex:0 0 64px;height:64px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
-.av.a{background:var(--accent);color:#fff}
-.member div{display:flex;flex-direction:column;gap:4px}
-.member strong{font-size:18px}.member small{font-size:14px;color:var(--soft)}
-.cta{border-radius:24px;background:var(--accent);color:#fff;padding:clamp(32px,6vw,72px);display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:space-between}
-.cta>div{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px}
-.cta .m{color:#fff}
-.cta h2{font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.02}
-.cta p{font-size:18px}
-.cta .btn{background:#fff;color:var(--ink);min-height:56px;padding:0 30px;font-size:17px}
-footer{border-top:1px solid var(--line)}
-footer>div{max-width:1240px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:14px;color:var(--soft)}
-footer span:last-child{display:flex;gap:24px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCC Jennifer — Inteligência Artificial e Dependência Tecnológica</title>
+  <meta name="description" content="Apresentação do TCC de Jhenyffer da Silva (UNIP, Relações Internacionais): Inteligência artificial e dependência tecnológica — as assimetrias entre países centrais e o Sul Global.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ---------- Capa (página 1) ---------- */
+    .capa .logo-unip { top: 70px; left: 40px; width: 218px; opacity: 1; }
+    .capa .logo-unip .unip { font-size: 60px; }
+    .capa .logo-unip .faixa { font-size: 17px; }
+
+    .capa .divisor { position: absolute; left: 278px; top: 48px; width: 2px; height: 118px; background: #555a6e; }
+    .capa .instituicao {
+      position: absolute; left: 300px; top: 44px;
+      font-family: 'Roboto Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; font-weight: 700;
+      font-size: 21px; line-height: 31px; color: var(--ink);
+    }
+    .capa .instituicao p:last-child { padding-left: 2px; }
+
+    .capa .tit {
+      position: absolute; left: 60px; top: 228px; width: 720px;
+      font-family: 'Roboto Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; color: var(--ink);
+    }
+    .capa .tit h1, .capa .tit h2 { white-space: nowrap; }
+    .capa .tit h1 { font-weight: 700; font-size: 49px; line-height: 58px; }
+    .capa .tit h2 { font-weight: 400; font-size: 41px; line-height: 50px; margin-top: 2px; }
+
+    .capa .regua { position: absolute; left: 68px; top: 508px; width: 100px; height: 5px; background: var(--navy); }
+    .capa .autora {
+      position: absolute; left: 68px; top: 536px;
+      font-family: 'Roboto Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; color: var(--ink);
+    }
+    .capa .autora .nome { font-weight: 700; font-size: 29px; }
+    .capa .autora .orient { font-weight: 700; font-size: 21px; margin-top: 18px; }
+    .capa .autora .local { font-weight: 400; font-size: 27px; margin-top: 18px; }
+
+    .capa .faixa-escura {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, #1d3a73, #10204a);
+      clip-path: polygon(1030px 0, 1188px 0, 1076px 180px, 918px 180px);
+    }
+    .capa .faixa-branca {
+      position: absolute; inset: 0; background: #fff;
+      clip-path: polygon(1188px 0, 1212px 0, 762px 720px, 738px 720px);
+    }
+    .capa .foto {
+      position: absolute; inset: 0;
+      clip-path: polygon(1212px 0, 1280px 0, 1280px 720px, 762px 720px);
+    }
+    .capa .foto svg { position: absolute; inset: 0; width: 1280px; height: 720px; }
+    .capa .faixa-baixo {
+      position: absolute; inset: 0;
+      background: linear-gradient(200deg, #14306a, #0d1d45);
+      clip-path: polygon(1000px 552px, 1095px 552px, 990px 720px, 895px 720px);
+    }
+    .capa .faixa-clara {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, #a9bede, #e8eef7);
+      clip-path: polygon(888px 620px, 958px 620px, 895px 720px, 825px 720px);
+    }
+  </style>
 </head>
-<body>
-<header>
-<div class="logo d"><b>TCC</b>[SEU NOME]</div>
-<nav aria-label="Seções"><a href="#sobre">Sobre</a><a href="#estrutura">Estrutura</a><a href="#resultados">Resultados</a><a href="#banca">Banca</a><a href="#defesa">Defesa</a></nav>
-</header>
-<section class="hero">
-<div>
-<span class="pill m"><i></i>TRABALHO DE CONCLUSÃO DE CURSO · [ANO]</span>
-<h1>[Título do seu TCC em até duas linhas]</h1>
-<p class="lead">[Subtítulo: uma frase que explica o que o trabalho investiga e por que isso importa.]</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
-<a class="btn pri" href="#defesa">Ver apresentação <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a class="btn sec" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Baixar o PDF</a>
-</div>
-</div>
-<dl>
-<div><dt class="m">AUTOR(A)</dt><dd>[Seu nome]</dd></div>
-<div><dt class="m">CURSO</dt><dd>[Nome do curso]</dd></div>
-<div><dt class="m">INSTITUIÇÃO</dt><dd>[Universidade]</dd></div>
-<div><dt class="m">ORIENTAÇÃO</dt><dd>[Prof(a). Dr(a). Nome]</dd></div>
-</dl>
-</section>
-<section id="sobre" class="dark"><div class="w">
-<div class="row"><h2>Sobre o trabalho</h2><span class="m">01 / RESUMO</span></div>
-<div class="grid">
-<article class="card"><span class="m">PROBLEMA</span><h3>O que motivou a pesquisa</h3><p>[Descreva em 2–3 frases o problema ou a lacuna que o trabalho aborda.]</p></article>
-<article class="card"><span class="m">OBJETIVO</span><h3>Aonde se quer chegar</h3><p>[Objetivo geral do TCC e, se quiser, os objetivos específicos em uma linha.]</p></article>
-<article class="card"><span class="m">METODOLOGIA</span><h3>Como foi feito</h3><p>[Tipo de pesquisa, métodos, ferramentas e fontes de dados utilizadas.]</p></article>
-</div>
-</div></section>
-<section id="estrutura" class="w">
-<div class="row"><h2>Estrutura do trabalho</h2><span class="m">02 / CAPÍTULOS</span></div>
-<ol>
-<li><span class="n d">01</span><span class="t d">Introdução</span><p>[Contextualização do tema, justificativa e pergunta de pesquisa.]</p></li>
-<li><span class="n d">02</span><span class="t d">Referencial teórico</span><p>[Principais autores, conceitos e estudos que embasam o trabalho.]</p></li>
-<li><span class="n d">03</span><span class="t d">Metodologia</span><p>[Etapas da pesquisa, coleta e análise dos dados.]</p></li>
-<li><span class="n d">04</span><span class="t d">Resultados e discussão</span><p>[O que foi encontrado e como dialoga com a literatura.]</p></li>
-<li><span class="n d">05</span><span class="t d">Considerações finais</span><p>[Conclusões, limitações e sugestões para trabalhos futuros.]</p></li>
-</ol>
-</section>
-<section id="resultados" class="alt"><div class="w">
-<div class="row"><h2>Principais resultados</h2><span class="m">03 / ACHADOS</span></div>
-<div class="grid">
-<div class="stat"><span class="d">[00%]</span><span>[O que esse número representa no seu estudo]</span></div>
-<div class="stat"><span class="d">[000]</span><span>[Amostra, participantes ou dados analisados]</span></div>
-<div class="stat"><span class="d">[0×]</span><span>[Comparação, ganho ou diferença observada]</span></div>
-</div>
-<blockquote>“[A conclusão central do trabalho em uma frase forte — o que a banca deve lembrar.]”</blockquote>
-</div></section>
-<section id="banca" class="w">
-<div class="row"><h2>Banca examinadora</h2><span class="m">04 / AVALIAÇÃO</span></div>
-<div class="grid">
-<div class="member"><span class="av a d">OR</span><div><strong>[Prof(a). Dr(a). Nome]</strong><small>Orientador(a) · [Instituição]</small></div></div>
-<div class="member"><span class="av d">M1</span><div><strong>[Prof(a). Nome]</strong><small>Membro da banca · [Instituição]</small></div></div>
-<div class="member"><span class="av d">M2</span><div><strong>[Prof(a). Nome]</strong><small>Membro da banca · [Instituição]</small></div></div>
-</div>
-</section>
-<section id="defesa" style="max-width:1240px;margin:0 auto;padding:0 24px 96px">
-<div class="cta">
-<div><span class="m">05 / DEFESA PÚBLICA</span><h2>Você está convidado(a) para a apresentação</h2><p>[Dia da semana], [DD] de [mês] de [ano] · [HH:MM]<br>[Local — sala, prédio ou link da transmissão]</p></div>
-<a class="btn" href="#">Confirmar presença <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-</div>
-</section>
-<footer><div><span>© [Ano] [Seu nome] · [Curso] — [Universidade]</span><span><a href="#">E-mail</a><a href="#">LinkedIn</a><a href="#">Lattes</a></span></div></footer>
+<body data-pagina="1" data-raiz="">
+
+<main class="stage">
+  <div class="slide-holder">
+    <section class="slide capa" data-sem-moldura aria-label="Página 1 — Capa">
+
+      <div class="logo-unip" aria-label="UNIP — Universidade Paulista">
+        <div class="unip">UNIP</div>
+        <div class="faixa">UNIVERSIDADE PAULISTA</div>
+      </div>
+      <div class="divisor"></div>
+      <div class="instituicao">
+        <p>Universidade Paulista – UNIP</p>
+        <p>Instituto de Ciências Sociais e Comunicação</p>
+        <p>Curso: Relações Internacionais</p>
+        <p>Polo: Paraíso</p>
+      </div>
+
+      <div class="tit">
+        <h1>INTELIGÊNCIA ARTIFICIAL E<br>DEPENDÊNCIA TECNOLÓGICA:</h1>
+        <h2>AS ASSIMETRIAS ENTRE PAÍSES CENTRAIS E O<br>SUL GLOBAL.</h2>
+      </div>
+
+      <div class="regua"></div>
+      <div class="autora">
+        <p class="nome">Jhenyffer da Silva</p>
+        <p class="orient">Orientador: Prof. João Paulo Gusmão Pinheiro Duarte</p>
+        <p class="local">São Paulo | 2026</p>
+      </div>
+
+      <!-- Imagem diagonal: Terra à noite com rede de conexões -->
+      <div class="faixa-escura"></div>
+      <div class="faixa-branca"></div>
+      <div class="foto">
+        <svg id="terra" viewBox="0 0 1280 720" aria-hidden="true">
+          <defs>
+            <radialGradient id="ceu" cx="78%" cy="55%" r="60%">
+              <stop offset="0" stop-color="#1b4f9c"/>
+              <stop offset=".55" stop-color="#0c2a5e"/>
+              <stop offset="1" stop-color="#050f2a"/>
+            </radialGradient>
+            <radialGradient id="globo" cx="40%" cy="35%" r="70%">
+              <stop offset="0" stop-color="#2d6fc4"/>
+              <stop offset=".6" stop-color="#103a7a"/>
+              <stop offset="1" stop-color="#071a3d"/>
+            </radialGradient>
+            <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.2"/>
+            </filter>
+          </defs>
+          <rect width="1280" height="720" fill="url(#ceu)"/>
+          <circle cx="1060" cy="420" r="330" fill="url(#globo)"/>
+          <circle cx="1060" cy="420" r="332" fill="none" stroke="#6fb4ff" stroke-opacity=".35" stroke-width="3"/>
+          <g id="rede"></g>
+        </svg>
+      </div>
+      <div class="faixa-baixo"></div>
+      <div class="faixa-clara"></div>
+    </section>
+  </div>
+</main>
+
+<script>
+  /* Rede de pontos luminosos sobre o globo (determinística) */
+  (function () {
+    var g = document.getElementById('rede');
+    var ns = 'http://www.w3.org/2000/svg';
+    var seed = 7;
+    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    var pts = [];
+    while (pts.length < 140) {
+      var a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * 320;
+      var x = 1060 + Math.cos(a) * r, y = 420 + Math.sin(a) * r;
+      /* concentra pontos em "continentes" */
+      var cont = (x > 960 && x < 1130 && y > 330 && y < 640) || (x > 860 && x < 1080 && y > 200 && y < 330) || (x > 1130 && y > 180 && y < 420);
+      if (cont || rnd() < .25) pts.push([x, y]);
+    }
+    var linhas = '';
+    for (var i = 0; i < pts.length; i++) {
+      for (var j = i + 1; j < pts.length; j++) {
+        var dx = pts[i][0] - pts[j][0], dy = pts[i][1] - pts[j][1];
+        if (dx * dx + dy * dy < 75 * 75 && rnd() < .55)
+          linhas += 'M' + pts[i][0].toFixed(0) + ' ' + pts[i][1].toFixed(0) + 'L' + pts[j][0].toFixed(0) + ' ' + pts[j][1].toFixed(0);
+      }
+    }
+    var p = document.createElementNS(ns, 'path');
+    p.setAttribute('d', linhas);
+    p.setAttribute('stroke', '#8cc8ff'); p.setAttribute('stroke-opacity', '.35'); p.setAttribute('stroke-width', '1');
+    g.appendChild(p);
+    pts.forEach(function (q) {
+      var s = .8 + rnd() * 2.2;
+      var c = document.createElementNS(ns, 'circle');
+      c.setAttribute('cx', q[0]); c.setAttribute('cy', q[1]); c.setAttribute('r', s * 2.2);
+      c.setAttribute('fill', '#bfe3ff'); c.setAttribute('opacity', '.5'); c.setAttribute('filter', 'url(#brilho)');
+      g.appendChild(c);
+      var d = document.createElementNS(ns, 'circle');
+      d.setAttribute('cx', q[0]); d.setAttribute('cy', q[1]); d.setAttribute('r', s * .7);
+      d.setAttribute('fill', '#ffffff');
+      g.appendChild(d);
+    });
+  })();
+</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
