@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big Techs e colonialismo digital — TCC Jennifer</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .lista { position: absolute; left: 280px; top: 176px; width: 757px; }
+    .lista li { font-size: 23.5px; line-height: 30.5px; }
+    .grafico { position: absolute; left: 420px; top: 360px; width: 440px; height: 324px; background: #fff; }
+    .grafico svg { width: 100%; height: 100%; display: block; font-family: Arial, Helvetica, sans-serif; }
+  </style>
+</head>
+<body data-pagina="8" data-raiz="../">
+
+<main class="stage">
+  <div class="slide-holder">
+    <section class="slide" aria-label="Página 8 — Big Techs e colonialismo digital">
+
+      <div class="titulo"><h1>Big Techs e colonialismo digital</h1></div>
+
+      <ol class="numerada lista">
+        <li>Controle de plataformas, infraestrutura e fluxos de dados.</li>
+        <li>Extração e apropriação econômica de informações.</li>
+        <li>Articulação entre capacidades materiais, ideias e instituições.</li>
+        <li>Colonialismo digital como categoria analítica, não como consequência automática da dependência.</li>
+      </ol>
+
+      <figure class="grafico" aria-label="Gráfico: tendência de participação de mercado dos provedores de nuvem, Q4 2020 a Q3 2025. Fonte: Synergy Research Group">
+        <svg id="nuvem" viewBox="0 0 440 324"></svg>
+      </figure>
+
+    </section>
+  </div>
+</main>
+
+<script>
+  /* Cloud Provider Market Share Trend — reprodução do gráfico do slide
+     (valores aproximados lidos do gráfico original; fonte: Synergy Research Group) */
+  (function () {
+    var series = [
+      { nome: 'Amazon',     cor: '#f0a030', w: 2.6, v: [31.5,31.8,32.5,32.3,32.4,32.6,33.8,33.4,32.6,32.0,32.3,32.1,31.3,31.4,31.7,31.1,30.4,29.9,29.6,29.4] },
+      { nome: 'Others',     cor: '#7a7a7a', w: 2.6, tra: '6 4', v: [30.3,30.2,29.7,28.6,28.2,27.6,27.0,26.7,26.0,26.8,26.7,26.3,25.9,25.7,25.3,24.6,24.6,24.6,24.3,23.8] },
+      { nome: 'Microsoft',  cor: '#2ab0e2', w: 2.6, v: [13.1,13.1,12.8,13.9,15.2,15.6,15.4,15.7,17.3,17.3,16.6,17.4,19.4,19.6,18.4,18.9,20.5,20.9,20.1,20.2] },
+      { nome: 'Google',     cor: '#22a35a', w: 2.6, v: [8.9,9.0,9.6,9.6,9.8,10.0,10.4,10.8,10.9,11.0,11.4,11.4,11.6,11.8,12.3,12.3,12.4,12.8,13.0,13.3] },
+      { nome: 'Alibaba',    cor: '#f07a20', w: 2,   v: [6.3,6.2,5.7,6.3,5.9,5.5,4.8,5.0,4.5,4.3,4.2,4.2,4.0,3.8,3.8,3.9,3.8,3.6,3.5,3.6] },
+      { nome: 'Oracle',     cor: '#e2342b', w: 2,   v: [2.0,2.1,2.1,2.2,2.3,2.4,2.5,2.5,2.6,2.6,2.7,2.7,2.8,2.9,2.9,3.0,3.0,3.1,3.2,3.4] },
+      { nome: 'Neoclouds',  cor: '#111111', w: 2,   v: [0.3,0.3,0.3,0.3,0.3,0.3,0.4,0.4,0.5,0.6,0.7,0.9,1.0,1.3,1.6,1.8,2.1,2.4,2.7,3.0] },
+      { nome: 'Salesforce', cor: '#4a6ee0', w: 2,   v: [3.0,2.9,2.9,2.8,2.8,2.7,2.7,2.6,2.6,2.5,2.5,2.4,2.4,2.4,2.3,2.3,2.3,2.2,2.2,2.2] },
+      { nome: 'IBM',        cor: '#1c2a6b', w: 2,   v: [4.7,4.5,4.2,3.8,3.6,3.5,3.4,3.2,3.0,2.8,2.7,2.5,2.4,2.3,2.2,2.1,2.0,1.9,1.8,1.7] }
+    ];
+    var tri = ['Q4','Q1','Q2','Q3','Q4','Q1','Q2','Q3','Q4','Q1','Q2','Q3','Q4','Q1','Q2','Q3','Q4','Q1','Q2','Q3'];
+    var ano = ['20','21','21','21','21','22','22','22','22','23','23','23','23','24','24','24','24','25','25','25'];
+    var L = 36, R = 368, T = 32, B = 286, MAX = 35;
+    var X = function (i) { return L + i * (R - L) / 19; };
+    var Y = function (v) { return B - v / MAX * (B - T); };
+    var s = '';
+    s += '<text x="220" y="14" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">Cloud Provider Market Share Trend</text>';
+    s += '<text x="220" y="25" text-anchor="middle" font-size="7.5" fill="#444">(IaaS, PaaS, Hosted Private Cloud)</text>';
+    for (var p = 0; p <= 35; p += 5) {
+      s += '<line x1="' + L + '" x2="' + R + '" y1="' + Y(p) + '" y2="' + Y(p) + '" stroke="#d5d5d5" stroke-width=".7"/>';
+      s += '<text x="' + (L - 4) + '" y="' + (Y(p) + 2.5) + '" text-anchor="end" font-size="7" fill="#333">' + p + '%</text>';
+    }
+    s += '<text transform="translate(10 ' + ((T + B) / 2) + ') rotate(-90)" text-anchor="middle" font-size="7.5" fill="#333">Share of Worldwide Revenues</text>';
+    tri.forEach(function (q, i) {
+      s += '<text x="' + X(i) + '" y="' + (B + 9) + '" text-anchor="middle" font-size="6.5" fill="#333">' + q + '</text>';
+      s += '<text x="' + X(i) + '" y="' + (B + 17) + '" text-anchor="middle" font-size="6.5" fill="#333">' + ano[i] + '</text>';
+    });
+    var rot = { Amazon: 29.6, Others: 23.2, Microsoft: 20.2, Google: 13.2, Alibaba: 4.6, Oracle: 3.6, Neoclouds: 2.6, Salesforce: 1.6, IBM: .6 };
+    series.forEach(function (se) {
+      var d = se.v.map(function (v, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1); }).join('');
+      s += '<path d="' + d + '" fill="none" stroke="' + se.cor + '" stroke-width="' + se.w + '" stroke-linejoin="round"' + (se.tra ? ' stroke-dasharray="' + se.tra + '"' : '') + '/>';
+      var grande = ['Amazon','Microsoft','Google'].indexOf(se.nome) > -1;
+      s += '<text x="' + (R + 6) + '" y="' + (Y(rot[se.nome]) + 3) + '" font-size="' + (grande ? 12.5 : 7.5) + '" font-weight="700" fill="' + (se.nome === 'Others' ? '#777' : se.cor) + '">' + (se.nome === 'Amazon' ? 'amazon' : se.nome) + '</text>';
+    });
+    s += '<text x="436" y="318" text-anchor="end" font-size="6.5" fill="#444">Source: Synergy Research Group</text>';
+    document.getElementById('nuvem').innerHTML = s;
+  })();
+</script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
