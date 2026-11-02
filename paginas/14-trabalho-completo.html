@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalho completo — TCC Jennifer</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .doc-icone { position: absolute; left: 584px; top: 196px; width: 112px; height: 136px; }
+    .descricao {
+      position: absolute; left: 240px; right: 240px; top: 356px;
+      text-align: center; font-size: 22.5px; line-height: 1.4; color: #22284d;
+    }
+    .descricao strong {
+      display: block; margin-bottom: 6px;
+      font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 25px; color: var(--ink);
+    }
+    .botoes {
+      position: absolute; left: 0; right: 0; top: 500px;
+      display: flex; justify-content: center; gap: 22px;
+    }
+    .botao {
+      display: inline-flex; align-items: center; gap: 14px;
+      height: 76px; padding: 0 44px; border-radius: 38px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 21px;
+      text-transform: uppercase; letter-spacing: .4px; text-decoration: none;
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+    .botao svg { width: 28px; height: 28px; flex: none; }
+    .botao.principal { background: var(--navy); color: #fff; box-shadow: 0 8px 22px rgba(31, 38, 80, .28); }
+    .botao.principal:hover { background: #2a3368; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(31, 38, 80, .34); }
+    .botao.secundario { background: #fff; color: var(--navy); border: 2px solid var(--navy); }
+    .botao.secundario:hover { background: #f4f5fa; transform: translateY(-2px); }
+    .botao:focus-visible { outline: 3px solid #2f4fb3; outline-offset: 4px; }
+  </style>
+</head>
+<body data-pagina="14" data-raiz="../">
+
+<main class="stage">
+  <div class="slide-holder">
+    <section class="slide" aria-label="Página 14 — Trabalho completo">
+
+      <div class="titulo"><h1>Trabalho completo</h1></div>
+
+      <!-- documento PDF -->
+      <svg class="doc-icone" viewBox="0 0 112 136" aria-hidden="true">
+        <path d="M8 4h66l30 30v94a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" fill="#fff" stroke="#1b1f3b" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M74 4v26a4 4 0 0 0 4 4h26" fill="none" stroke="#1b1f3b" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M20 46h52M20 58h72M20 70h72M20 82h60" stroke="#9aa3c7" stroke-width="4" stroke-linecap="round"/>
+        <rect x="16" y="94" width="80" height="28" rx="6" fill="#1f2650"/>
+        <text x="56" y="114" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="17" fill="#fff">PDF</text>
+      </svg>
+
+      <p class="descricao">
+        <strong>Inteligência artificial e dependência tecnológica: as assimetrias entre países centrais e o Sul Global</strong>
+        Leia a versão completa do Trabalho de Conclusão de Curso.
+      </p>
+
+      <div class="botoes">
+        <a class="botao principal" id="abrir-pdf" href="../trabalho/TCC%20Jhenyffer%20-%20Vers%C3%A3o%20final.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          Abrir o TCC completo
+        </a>
+        <a class="botao secundario" href="../trabalho/TCC%20Jhenyffer%20-%20Vers%C3%A3o%20final.pdf" download="TCC Jhenyffer - Versão final.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+          Baixar PDF
+        </a>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
