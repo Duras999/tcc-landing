@@ -21,7 +21,10 @@ tcc-jennifer/
 │   ├── 10-caso-worldcoin.html
 │   ├── 11-consideracoes-finais.html
 │   ├── 12-referencias.html
-│   └── 13-obrigada.html
+│   ├── 13-obrigada.html
+│   └── 14-trabalho-completo.html     → botão para abrir/baixar o PDF
+├── trabalho/
+│   └── TCC Jhenyffer - Versão final.pdf  → trabalho completo
 ├── assets/
 │   ├── css/style.css                   → estilos comuns (slide, títulos, listas, navegação)
 │   ├── js/site.js                      → logo, pontilhado, numeração, menu e navegação
