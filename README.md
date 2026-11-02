@@ -1,4 +1,4 @@
-# TCC Jennifer
+# TCC Jhenyffer
 
 Site da apresentação do TCC **"Inteligência artificial e dependência tecnológica: as assimetrias entre países centrais e o Sul Global"** — Jhenyffer da Silva, UNIP, Relações Internacionais (2026).
 
@@ -7,7 +7,7 @@ Recriado em HTML/CSS a partir do design do Canva (13 páginas), com o mesmo layo
 ## Estrutura
 
 ```
-tcc-jennifer/
+tcc-jhenyffer/
 ├── index.html                          → Página 1 (capa)
 ├── paginas/
 │   ├── 02-tema-e-contextualizacao.html

@@ -1,5 +1,5 @@
 /* =========================================================
-   TCC Jennifer — moldura comum das páginas
+   TCC Jhenyffer — moldura comum das páginas
    - escala o slide para caber na tela
    - injeta logo UNIP, pontilhado dos cantos e número da página
    - barra de navegação + painel com todas as páginas
@@ -89,7 +89,7 @@
   var nav = document.createElement('nav');
   nav.className = 'nav';
   nav.innerHTML =
-    '<a class="marca" href="' + raiz + 'index.html">TCC JENNIFER</a>' +
+    '<a class="marca" href="' + raiz + 'index.html">TCC JHENYFFER</a>' +
     '<div class="centro">' +
       '<a class="btn' + (ant ? '' : ' desativado') + '" href="' + (ant ? url(ant) : '#') + '" aria-label="Página anterior">&#8592;<span class="txt"> Anterior</span></a>' +
       '<span class="contador">' + atual + ' / ' + PAGINAS.length + '</span>' +
